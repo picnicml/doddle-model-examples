@@ -5,11 +5,10 @@ import com.picnicml.doddlemodel.linear.PoissonRegression
 import com.picnicml.doddlemodel.metrics.rmse
 
 object PoissonRegressionExample extends App {
-
-  println("Poisson regression model trained on the high school test dataset:")
   val (x, y) = loadHighSchoolTestDataset
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
+  // split the data
   val trIndices = 0 until x.rows / 2
   val teIndices = x.rows / 2 until x.rows
   val (xTr, yTr) = (x(trIndices, ::), y(trIndices))

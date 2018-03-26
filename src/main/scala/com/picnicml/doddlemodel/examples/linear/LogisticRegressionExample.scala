@@ -5,10 +5,10 @@ import com.picnicml.doddlemodel.linear.LogisticRegression
 import com.picnicml.doddlemodel.metrics.accuracy
 
 object LogisticRegressionExample extends App {
-  println("Logistic regression model trained on the breast cancer dataset:")
   val (x, y) = loadBreastCancerDataset
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
+  // split the data
   val trIndices = 0 until x.rows / 2
   val teIndices = x.rows / 2 until x.rows
   val (xTr, yTr) = (x(trIndices, ::), y(trIndices))

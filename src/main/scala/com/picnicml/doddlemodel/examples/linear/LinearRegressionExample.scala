@@ -5,10 +5,10 @@ import com.picnicml.doddlemodel.linear.LinearRegression
 import com.picnicml.doddlemodel.metrics.rmse
 
 object LinearRegressionExample extends App {
-  println("Linear regression model trained on the Boston housing dataset:")
   val (x, y) = loadBostonDataset
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
+  // split the data
   val trIndices = 0 until x.rows / 2
   val teIndices = x.rows / 2 until x.rows
   val (xTr, yTr) = (x(trIndices, ::), y(trIndices))

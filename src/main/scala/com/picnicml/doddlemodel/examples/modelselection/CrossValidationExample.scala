@@ -6,7 +6,6 @@ import com.picnicml.doddlemodel.metrics.accuracy
 import com.picnicml.doddlemodel.modelselection.CrossValidation
 
 object CrossValidationExample extends App {
-  println("Cross-validated logistic regression model trained on the breast cancer dataset:")
   val (x, y) = loadBreastCancerDataset
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
