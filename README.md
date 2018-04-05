@@ -11,3 +11,6 @@ This repository contains code examples for the [doddle-model](https://github.com
 
 #### 2. Model Selection
 * [Cross-Validation](src/main/scala/com/picnicml/doddlemodel/examples/modelselection/CrossValidationExample.scala)
+
+#### 3. Miscellaneous
+* [Estimator Persistence](src/main/scala/com/picnicml/doddlemodel/examples/misc/EstimatorPersistenceExample.scala)
