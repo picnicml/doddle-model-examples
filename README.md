@@ -22,4 +22,5 @@ This repository contains code examples for the [doddle-model](https://github.com
 * [Random Search](src/main/scala/com/picnicml/doddlemodel/examples/modelselection/RandomSearchExample.scala)
 
 #### 4. Miscellaneous
+* [Reading Data](src/main/scala/com/picnicml/doddlemodel/examples/misc/ReadingDataExample.scala)
 * [Estimator Persistence](src/main/scala/com/picnicml/doddlemodel/examples/misc/EstimatorPersistenceExample.scala)
