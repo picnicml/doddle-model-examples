@@ -24,3 +24,12 @@ This repository contains code examples for the [doddle-model](https://github.com
 #### 4. Miscellaneous
 * [Reading Data](src/main/scala/com/picnicml/doddlemodel/examples/misc/ReadingDataExample.scala)
 * [Estimator Persistence](src/main/scala/com/picnicml/doddlemodel/examples/misc/EstimatorPersistenceExample.scala)
+
+### Setup
+To run the examples locally you will need to publish a local snapshot version of the repository:
+```
+git clone https://github.com/picnicml/doddle-model.git
+cd doddle-model
+sbt publishLocal
+```
+Ensure the published version matches the version contained within the `project/Dependencies.scala` file.
