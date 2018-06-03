@@ -5,11 +5,14 @@ import com.picnicml.doddlemodel.data.loadIrisDataset
 import com.picnicml.doddlemodel.linear.SoftmaxClassifier
 import com.picnicml.doddlemodel.metrics.accuracy
 
+import scala.util.Random
+
 object SoftmaxClassifierExample extends App {
   val (x, y) = loadIrisDataset
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
   // shuffle the data
+  implicit val rand: Random = new Random(42)
   val (xShuffled, yShuffled) = shuffleDataset(x, y)
 
   // split the data
