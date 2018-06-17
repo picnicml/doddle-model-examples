@@ -6,13 +6,13 @@ import com.picnicml.doddlemodel.data.loadIrisDataset
 import com.picnicml.doddlemodel.preprocessing.StandardScaler
 
 object StandardScalerExample extends App {
-  val (x, y) = loadIrisDataset
+  val (x, _) = loadIrisDataset
   println(s"Mean values before preprocessing: ${mean(x(::, *)).t}")
   println(s"Standard deviations before preprocessing: ${stddev(x(::, *)).t}")
 
   val scaler = StandardScaler()
-  val trainedScaler = scaler.fit(x, y)
-  val (xTransformed, _) = trainedScaler.transform(x, y)
+  val trainedScaler = scaler.fit(x)
+  val xTransformed = trainedScaler.transform(x)
   println(s"Mean values after preprocessing: ${mean(xTransformed(::, *)).t}")
   println(s"Standard deviations after preprocessing: ${stddev(xTransformed(::, *)).t}")
 }
