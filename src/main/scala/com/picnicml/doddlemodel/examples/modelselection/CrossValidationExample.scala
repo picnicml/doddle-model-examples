@@ -13,7 +13,7 @@ object CrossValidationExample extends App {
 
   // lambda is L2 regularization strength
   val model = LogisticRegression(lambda = 1.5)
-  val cv = CrossValidation[LogisticRegression](metric = accuracy, folds = 10)
+  val cv = CrossValidation(metric = accuracy, folds = 10)
 
   implicit val rand: Random = new Random(42)
   val score = cv.score(model, x, y)

@@ -20,7 +20,7 @@ object RandomSearchExample extends App {
   println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
 
   val numSearchIterations = 100
-  val crossValidation = CrossValidation[LogisticRegression](metric = accuracy, folds = 5)
+  val crossValidation = CrossValidation(metric = accuracy, folds = 5)
   val search = HyperparameterSearch[LogisticRegression](crossVal = crossValidation, numIterations = numSearchIterations)
 
   implicit val rand: Random = new Random(42)
