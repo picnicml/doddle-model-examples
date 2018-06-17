@@ -26,6 +26,7 @@ This repository contains code examples for the [doddle-model](https://github.com
 
 #### 5. Miscellaneous
 * [Reading Data](src/main/scala/com/picnicml/doddlemodel/examples/misc/ReadingDataExample.scala)
+* [Feature Preprocessing Pipeline](src/main/scala/com/picnicml/doddlemodel/examples/pipeline/PipelineExample.scala)
 * [Estimator Persistence](src/main/scala/com/picnicml/doddlemodel/examples/misc/EstimatorPersistenceExample.scala)
 
 ### Setup
