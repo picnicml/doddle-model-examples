@@ -1,25 +1,17 @@
 package com.picnicml.doddlemodel.examples.dummy
 
-import com.picnicml.doddlemodel.data.Utils.shuffleDataset
-import com.picnicml.doddlemodel.data.loadIrisDataset
+import com.picnicml.doddlemodel.data.{loadIrisDataset, shuffleDataset, splitDataset}
 import com.picnicml.doddlemodel.dummy.classification.MostFrequentClassifier
 import com.picnicml.doddlemodel.metrics.accuracy
 
 import scala.util.Random
 
 object MostFrequentClassifierExample extends App {
-  val (x, y) = loadIrisDataset
+  implicit val rand: Random = new Random(42)
+  val (x, y) = (shuffleDataset _).tupled(loadIrisDataset)
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
-  // shuffle the data
-  implicit val rand: Random = new Random(42)
-  val (xShuffled, yShuffled) = shuffleDataset(x, y)
-
-  // split the data
-  val trIndices = 0 until x.rows / 2
-  val teIndices = x.rows / 2 until x.rows
-  val (xTr, yTr) = (xShuffled(trIndices, ::), yShuffled(trIndices))
-  val (xTe, yTe) = (xShuffled(teIndices, ::), yShuffled(teIndices))
+  val (xTr, yTr, xTe, yTe) = splitDataset(x, y)
   println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
 
   val model = MostFrequentClassifier()
