@@ -15,8 +15,8 @@ object GridSearchExample extends App {
   println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
 
   val numSearchIterations = 100
-  val crossValidation = CrossValidation(metric = accuracy, folds = 5)
-  val search = HyperparameterSearch[LogisticRegression](crossValidation, numSearchIterations)
+  implicit val cv: CrossValidation = CrossValidation(metric = accuracy, folds = 5)
+  val search = HyperparameterSearch[LogisticRegression](numSearchIterations)
 
   implicit val rand: Random = new Random(42)
   val grid = (0 until numSearchIterations).toIterator.map(_.toDouble)
