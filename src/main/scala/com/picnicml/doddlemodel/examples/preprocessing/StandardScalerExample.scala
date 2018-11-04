@@ -4,6 +4,7 @@ import breeze.linalg.*
 import breeze.stats.{mean, stddev}
 import com.picnicml.doddlemodel.data.loadIrisDataset
 import com.picnicml.doddlemodel.preprocessing.StandardScaler
+import com.picnicml.doddlemodel.syntax.TransformerSyntax._
 
 object StandardScalerExample extends App {
   val (x, _) = loadIrisDataset

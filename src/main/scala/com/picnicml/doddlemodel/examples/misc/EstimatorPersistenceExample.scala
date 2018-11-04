@@ -4,6 +4,7 @@ import com.picnicml.doddlemodel.data.loadBreastCancerDataset
 import com.picnicml.doddlemodel.linear.LogisticRegression
 import com.picnicml.doddlemodel.loadEstimator
 import com.picnicml.doddlemodel.metrics.accuracy
+import com.picnicml.doddlemodel.syntax.ClassifierSyntax._
 
 object EstimatorPersistenceExample extends App {
   val (x, y) = loadBreastCancerDataset

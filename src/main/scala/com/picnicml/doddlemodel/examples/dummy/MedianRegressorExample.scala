@@ -3,6 +3,7 @@ package com.picnicml.doddlemodel.examples.dummy
 import com.picnicml.doddlemodel.data.{loadBostonDataset, splitDataset}
 import com.picnicml.doddlemodel.dummy.regression.MedianRegressor
 import com.picnicml.doddlemodel.metrics.rmse
+import com.picnicml.doddlemodel.syntax.RegressorSyntax._
 
 object MedianRegressorExample extends App {
   val (x, y) = loadBostonDataset

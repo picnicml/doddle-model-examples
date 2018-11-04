@@ -3,6 +3,7 @@ package com.picnicml.doddlemodel.examples.dummy
 import com.picnicml.doddlemodel.data.{loadIrisDataset, shuffleDataset, splitDataset}
 import com.picnicml.doddlemodel.dummy.classification.StratifiedClassifier
 import com.picnicml.doddlemodel.metrics.accuracy
+import com.picnicml.doddlemodel.syntax.ClassifierSyntax._
 
 import scala.util.Random
 
