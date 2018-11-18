@@ -3,7 +3,7 @@ package com.picnicml.doddlemodel.examples.modelselection
 import com.picnicml.doddlemodel.data.{loadBreastCancerDataset, splitDataset}
 import com.picnicml.doddlemodel.linear.LogisticRegression
 import com.picnicml.doddlemodel.metrics.accuracy
-import com.picnicml.doddlemodel.modelselection.{CrossValidation, HyperparameterSearch}
+import com.picnicml.doddlemodel.modelselection.{CrossValidation, HyperparameterSearch, KFoldSplitter}
 import com.picnicml.doddlemodel.syntax.ClassifierSyntax._
 
 import scala.util.Random
@@ -16,8 +16,9 @@ object GridSearchExample extends App {
   println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
 
   val numSearchIterations = 100
-  implicit val cv: CrossValidation = CrossValidation(metric = accuracy, folds = 5)
-  val search = HyperparameterSearch(numSearchIterations)
+  val splitter = KFoldSplitter(folds = 5)
+  val cv: CrossValidation = CrossValidation(metric = accuracy, splitter)
+  val search = HyperparameterSearch(numSearchIterations, cv)
 
   implicit val rand: Random = new Random(42)
   val grid = (0 until numSearchIterations).toIterator.map(_.toDouble)

@@ -3,7 +3,7 @@ package com.picnicml.doddlemodel.examples.modelselection
 import com.picnicml.doddlemodel.data.loadBreastCancerDataset
 import com.picnicml.doddlemodel.linear.LogisticRegression
 import com.picnicml.doddlemodel.metrics.accuracy
-import com.picnicml.doddlemodel.modelselection.CrossValidation
+import com.picnicml.doddlemodel.modelselection.{CrossValidation, KFoldSplitter}
 
 import scala.util.Random
 
@@ -13,7 +13,8 @@ object CrossValidationExample extends App {
 
   // lambda is L2 regularization strength
   val model = LogisticRegression(lambda = 1.5)
-  val cv = CrossValidation(metric = accuracy, folds = 10)
+  val splitter = KFoldSplitter(folds = 10)
+  val cv = CrossValidation(metric = accuracy, splitter)
 
   implicit val rand: Random = new Random(42)
   val score = cv.score(model, x, y)
