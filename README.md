@@ -26,7 +26,8 @@ This repository contains code examples for the [doddle-model](https://github.com
 * [Poisson Regression](src/main/scala/com/picnicml/doddlemodel/examples/linear/PoissonRegressionExample.scala)
 
 #### 5. Model Selection
-* [Cross-Validation](src/main/scala/com/picnicml/doddlemodel/examples/modelselection/CrossValidationExample.scala)
+* [K-Fold Cross-Validation](src/main/scala/com/picnicml/doddlemodel/examples/modelselection/KFoldExample.scala)
+* [Group K-Fold Cross-Validation](src/main/scala/com/picnicml/doddlemodel/examples/modelselection/GroupKFoldExample.scala)
 * [Grid Search](src/main/scala/com/picnicml/doddlemodel/examples/modelselection/GridSearchExample.scala)
 * [Random Search](src/main/scala/com/picnicml/doddlemodel/examples/modelselection/RandomSearchExample.scala)
 
