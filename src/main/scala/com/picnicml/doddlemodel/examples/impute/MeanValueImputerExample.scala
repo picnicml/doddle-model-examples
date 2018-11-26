@@ -12,6 +12,6 @@ object MeanValueImputerExample extends App {
   )
 
   val imputer = MeanValueImputer()
-  val fittedImputer = imputer.fit(xMissing)
-  println(s"imputed data: ${fittedImputer.transform(xMissing)}")
+  val trainedImputer = imputer.fit(xMissing)
+  println(s"imputed data: ${trainedImputer.transform(xMissing)}")
 }
