@@ -13,8 +13,7 @@ object KFoldExample extends App {
 
   // lambda is L2 regularization strength
   val model = LogisticRegression(lambda = 1.5)
-  val splitter = KFoldSplitter(numFolds = 10)
-  val cv = CrossValidation(metric = accuracy, splitter)
+  val cv = CrossValidation(accuracy, KFoldSplitter(numFolds = 10))
 
   implicit val rand: Random = new Random(42)
   val score = cv.score(model, x, y)

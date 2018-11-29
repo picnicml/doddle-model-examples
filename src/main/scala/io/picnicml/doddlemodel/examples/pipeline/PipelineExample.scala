@@ -1,6 +1,7 @@
 package io.picnicml.doddlemodel.examples.pipeline
 
 import io.picnicml.doddlemodel.data.{loadIrisDataset, shuffleDataset, splitDataset}
+import io.picnicml.doddlemodel.impute.MeanValueImputer
 import io.picnicml.doddlemodel.linear.SoftmaxClassifier
 import io.picnicml.doddlemodel.metrics.accuracy
 import io.picnicml.doddlemodel.pipeline.Pipeline
@@ -18,7 +19,10 @@ object PipelineExample extends App {
   val (xTr, yTr, xTe, yTe) = splitDataset(x, y)
   println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
 
-  val pipeline = Pipeline(List(pipe(StandardScaler())))(pipe(SoftmaxClassifier()))
+  val pipeline = Pipeline(
+    transformers = List(pipe(MeanValueImputer()), pipe(StandardScaler())))(
+    predictor = pipe(SoftmaxClassifier())
+  )
   val trainedPipeline = pipeline.fit(xTr, yTr)
 
   val score = accuracy(yTe, trainedPipeline.predict(xTe))

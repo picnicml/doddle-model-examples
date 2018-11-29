@@ -17,8 +17,7 @@ object RandomSearchExample extends App {
   println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
 
   val numSearchIterations = 100
-  val splitter = KFoldSplitter(numFolds = 5)
-  implicit val cv: CrossValidation = CrossValidation(metric = accuracy, splitter)
+  val cv: CrossValidation = CrossValidation(accuracy, KFoldSplitter(numFolds = 5))
   val search = HyperparameterSearch(numSearchIterations, cv)
 
   implicit val rand: Random = new Random(42)
