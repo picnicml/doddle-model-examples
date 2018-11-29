@@ -1,10 +1,10 @@
-package com.picnicml.doddlemodel.examples.modelselection
+package io.picnicml.doddlemodel.examples.modelselection
 
 import breeze.linalg.DenseVector
-import com.picnicml.doddlemodel.data.loadBreastCancerDataset
-import com.picnicml.doddlemodel.linear.LogisticRegression
-import com.picnicml.doddlemodel.metrics.accuracy
-import com.picnicml.doddlemodel.modelselection.{CrossValidation, GroupKFoldSplitter}
+import io.picnicml.doddlemodel.data.loadBreastCancerDataset
+import io.picnicml.doddlemodel.linear.LogisticRegression
+import io.picnicml.doddlemodel.metrics.accuracy
+import io.picnicml.doddlemodel.modelselection.{CrossValidation, GroupKFoldSplitter}
 
 import scala.util.Random
 

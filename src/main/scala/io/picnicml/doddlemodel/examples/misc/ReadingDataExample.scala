@@ -1,6 +1,6 @@
-package com.picnicml.doddlemodel.examples.misc
+package io.picnicml.doddlemodel.examples.misc
 
-import com.picnicml.doddlemodel.data.loadCsvDataset
+import io.picnicml.doddlemodel.data.loadCsvDataset
 
 object ReadingDataExample extends App {
   val dataDir = "/path/to/local/data/dir"

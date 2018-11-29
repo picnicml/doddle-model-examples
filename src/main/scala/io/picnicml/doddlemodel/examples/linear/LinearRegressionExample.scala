@@ -1,9 +1,9 @@
-package com.picnicml.doddlemodel.examples.linear
+package io.picnicml.doddlemodel.examples.linear
 
-import com.picnicml.doddlemodel.data.{loadBostonDataset, splitDataset}
-import com.picnicml.doddlemodel.linear.LinearRegression
-import com.picnicml.doddlemodel.metrics.rmse
-import com.picnicml.doddlemodel.syntax.RegressorSyntax._
+import io.picnicml.doddlemodel.data.{loadBostonDataset, splitDataset}
+import io.picnicml.doddlemodel.linear.LinearRegression
+import io.picnicml.doddlemodel.metrics.rmse
+import io.picnicml.doddlemodel.syntax.RegressorSyntax._
 
 object LinearRegressionExample extends App {
   val (x, y) = loadBostonDataset

@@ -1,9 +1,9 @@
-package com.picnicml.doddlemodel.examples.linear
+package io.picnicml.doddlemodel.examples.linear
 
-import com.picnicml.doddlemodel.data.{loadBreastCancerDataset, splitDataset}
-import com.picnicml.doddlemodel.linear.LogisticRegression
-import com.picnicml.doddlemodel.metrics.accuracy
-import com.picnicml.doddlemodel.syntax.ClassifierSyntax._
+import io.picnicml.doddlemodel.data.{loadBreastCancerDataset, splitDataset}
+import io.picnicml.doddlemodel.linear.LogisticRegression
+import io.picnicml.doddlemodel.metrics.accuracy
+import io.picnicml.doddlemodel.syntax.ClassifierSyntax._
 
 object LogisticRegressionExample extends App {
   val (x, y) = loadBreastCancerDataset

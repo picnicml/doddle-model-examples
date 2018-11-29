@@ -1,10 +1,10 @@
-package com.picnicml.doddlemodel.examples.misc
+package io.picnicml.doddlemodel.examples.misc
 
-import com.picnicml.doddlemodel.data.loadBreastCancerDataset
-import com.picnicml.doddlemodel.linear.LogisticRegression
-import com.picnicml.doddlemodel.loadEstimator
-import com.picnicml.doddlemodel.metrics.accuracy
-import com.picnicml.doddlemodel.syntax.ClassifierSyntax._
+import io.picnicml.doddlemodel.data.loadBreastCancerDataset
+import io.picnicml.doddlemodel.linear.LogisticRegression
+import io.picnicml.doddlemodel.loadEstimator
+import io.picnicml.doddlemodel.metrics.accuracy
+import io.picnicml.doddlemodel.syntax.ClassifierSyntax._
 
 object EstimatorPersistenceExample extends App {
   val (x, y) = loadBreastCancerDataset

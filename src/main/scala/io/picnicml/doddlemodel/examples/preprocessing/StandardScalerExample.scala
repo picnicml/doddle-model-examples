@@ -1,10 +1,10 @@
-package com.picnicml.doddlemodel.examples.preprocessing
+package io.picnicml.doddlemodel.examples.preprocessing
 
 import breeze.linalg.*
 import breeze.stats.{mean, stddev}
-import com.picnicml.doddlemodel.data.loadIrisDataset
-import com.picnicml.doddlemodel.preprocessing.StandardScaler
-import com.picnicml.doddlemodel.syntax.TransformerSyntax._
+import io.picnicml.doddlemodel.data.loadIrisDataset
+import io.picnicml.doddlemodel.preprocessing.StandardScaler
+import io.picnicml.doddlemodel.syntax.TransformerSyntax._
 
 object StandardScalerExample extends App {
   val (x, _) = loadIrisDataset

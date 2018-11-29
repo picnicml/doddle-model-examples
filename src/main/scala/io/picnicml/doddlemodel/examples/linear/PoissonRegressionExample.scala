@@ -1,9 +1,9 @@
-package com.picnicml.doddlemodel.examples.linear
+package io.picnicml.doddlemodel.examples.linear
 
-import com.picnicml.doddlemodel.data.{loadHighSchoolTestDataset, splitDataset}
-import com.picnicml.doddlemodel.linear.PoissonRegression
-import com.picnicml.doddlemodel.metrics.rmse
-import com.picnicml.doddlemodel.syntax.RegressorSyntax._
+import io.picnicml.doddlemodel.data.{loadHighSchoolTestDataset, splitDataset}
+import io.picnicml.doddlemodel.linear.PoissonRegression
+import io.picnicml.doddlemodel.metrics.rmse
+import io.picnicml.doddlemodel.syntax.RegressorSyntax._
 
 object PoissonRegressionExample extends App {
   val (x, y) = loadHighSchoolTestDataset

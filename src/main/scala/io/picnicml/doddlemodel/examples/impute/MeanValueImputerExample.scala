@@ -1,8 +1,8 @@
-package com.picnicml.doddlemodel.examples.impute
+package io.picnicml.doddlemodel.examples.impute
 
 import breeze.linalg.DenseMatrix
-import com.picnicml.doddlemodel.impute.MeanValueImputer
-import com.picnicml.doddlemodel.syntax.TransformerSyntax._
+import io.picnicml.doddlemodel.impute.MeanValueImputer
+import io.picnicml.doddlemodel.syntax.TransformerSyntax._
 
 object MeanValueImputerExample extends App {
   val xMissing = DenseMatrix(

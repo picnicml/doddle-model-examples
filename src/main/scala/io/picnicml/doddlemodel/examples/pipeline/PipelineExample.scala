@@ -1,12 +1,12 @@
-package com.picnicml.doddlemodel.examples.pipeline
+package io.picnicml.doddlemodel.examples.pipeline
 
-import com.picnicml.doddlemodel.data.{loadIrisDataset, shuffleDataset, splitDataset}
-import com.picnicml.doddlemodel.linear.SoftmaxClassifier
-import com.picnicml.doddlemodel.metrics.accuracy
-import com.picnicml.doddlemodel.pipeline.Pipeline
-import com.picnicml.doddlemodel.pipeline.Pipeline.pipe
-import com.picnicml.doddlemodel.preprocessing.StandardScaler
-import com.picnicml.doddlemodel.syntax.PredictorSyntax._
+import io.picnicml.doddlemodel.data.{loadIrisDataset, shuffleDataset, splitDataset}
+import io.picnicml.doddlemodel.linear.SoftmaxClassifier
+import io.picnicml.doddlemodel.metrics.accuracy
+import io.picnicml.doddlemodel.pipeline.Pipeline
+import io.picnicml.doddlemodel.pipeline.Pipeline.pipe
+import io.picnicml.doddlemodel.preprocessing.StandardScaler
+import io.picnicml.doddlemodel.syntax.PredictorSyntax._
 
 import scala.util.Random
 
