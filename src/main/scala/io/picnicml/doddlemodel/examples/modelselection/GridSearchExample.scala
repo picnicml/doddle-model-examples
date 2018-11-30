@@ -12,8 +12,8 @@ object GridSearchExample extends App {
   val (x, y) = loadBreastCancerDataset
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
-  val (xTr, yTr, xTe, yTe) = splitDataset(x, y)
-  println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
+  val split = splitDataset(x, y)
+  println(s"training set size: ${split.xTr.rows}, test set size: ${split.xTe.rows}")
 
   val numSearchIterations = 100
   val cv: CrossValidation = CrossValidation(accuracy, KFoldSplitter(numFolds = 5))
@@ -21,10 +21,10 @@ object GridSearchExample extends App {
 
   implicit val rand: Random = new Random(42)
   val grid = (0 until numSearchIterations).toIterator.map(_.toDouble)
-  val bestModel = search.bestOf(xTr, yTr) {
+  val bestModel = search.bestOf(split.xTr, split.yTr) {
     LogisticRegression(lambda = grid.next)
   }
 
-  val score = accuracy(yTe, bestModel.predict(xTe))
+  val score = accuracy(split.yTe, bestModel.predict(split.xTe))
   println(f"test accuracy: $score%1.4f")
 }

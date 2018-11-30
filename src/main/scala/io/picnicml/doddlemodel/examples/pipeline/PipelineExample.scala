@@ -16,15 +16,15 @@ object PipelineExample extends App {
   implicit val rand: Random = new Random(42)
   val (x, y) = (shuffleDataset _).tupled(loadIrisDataset)
 
-  val (xTr, yTr, xTe, yTe) = splitDataset(x, y)
-  println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
+  val split = splitDataset(x, y)
+  println(s"training set size: ${split.xTr.rows}, test set size: ${split.xTe.rows}")
 
   val pipeline = Pipeline(
     transformers = List(pipe(MeanValueImputer()), pipe(StandardScaler())))(
     predictor = pipe(SoftmaxClassifier())
   )
-  val trainedPipeline = pipeline.fit(xTr, yTr)
+  val trainedPipeline = pipeline.fit(split.xTr, split.yTr)
 
-  val score = accuracy(yTe, trainedPipeline.predict(xTe))
+  val score = accuracy(split.yTe, trainedPipeline.predict(split.xTe))
   println(f"test accuracy: $score%1.4f")
 }

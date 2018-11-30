@@ -12,13 +12,13 @@ object SoftmaxClassifierExample extends App {
   val (x, y) = (shuffleDataset _).tupled(loadIrisDataset)
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
-  val (xTr, yTr, xTe, yTe) = splitDataset(x, y)
-  println(s"training set size: ${xTr.rows}, test set size: ${xTe.rows}")
+  val split = splitDataset(x, y)
+  println(s"training set size: ${split.xTr.rows}, test set size: ${split.xTe.rows}")
 
   // lambda is L2 regularization strength
   val model = SoftmaxClassifier(lambda = 1.5)
-  val trainedModel = model.fit(xTr, yTr)
+  val trainedModel = model.fit(split.xTr, split.yTr)
 
-  val score = accuracy(yTe, trainedModel.predict(xTe))
+  val score = accuracy(split.yTe, trainedModel.predict(split.xTe))
   println(f"test accuracy: $score%1.4f")
 }
