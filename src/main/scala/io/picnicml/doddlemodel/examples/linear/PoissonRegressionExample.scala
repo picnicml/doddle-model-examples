@@ -1,6 +1,7 @@
 package io.picnicml.doddlemodel.examples.linear
 
-import io.picnicml.doddlemodel.data.{loadHighSchoolTestDataset, splitDataset}
+import io.picnicml.doddlemodel.data.DatasetUtils.splitDataset
+import io.picnicml.doddlemodel.data.loadHighSchoolTestDataset
 import io.picnicml.doddlemodel.linear.PoissonRegression
 import io.picnicml.doddlemodel.metrics.rmse
 import io.picnicml.doddlemodel.syntax.RegressorSyntax._

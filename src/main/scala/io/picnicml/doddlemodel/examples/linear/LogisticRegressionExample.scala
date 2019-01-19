@@ -1,6 +1,7 @@
 package io.picnicml.doddlemodel.examples.linear
 
-import io.picnicml.doddlemodel.data.{loadBreastCancerDataset, splitDataset}
+import io.picnicml.doddlemodel.data.DatasetUtils.splitDataset
+import io.picnicml.doddlemodel.data.loadBreastCancerDataset
 import io.picnicml.doddlemodel.linear.LogisticRegression
 import io.picnicml.doddlemodel.metrics.accuracy
 import io.picnicml.doddlemodel.syntax.ClassifierSyntax._

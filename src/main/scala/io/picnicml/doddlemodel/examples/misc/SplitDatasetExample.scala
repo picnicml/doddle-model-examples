@@ -1,7 +1,8 @@
 package io.picnicml.doddlemodel.examples.misc
 
 import breeze.linalg.DenseVector
-import io.picnicml.doddlemodel.data.{loadIrisDataset, splitDataset, splitDatasetWithGroups}
+import io.picnicml.doddlemodel.data.DatasetUtils.{splitDataset, splitDatasetWithGroups}
+import io.picnicml.doddlemodel.data.loadIrisDataset
 
 object SplitDatasetExample extends App {
   val (x, y) = loadIrisDataset

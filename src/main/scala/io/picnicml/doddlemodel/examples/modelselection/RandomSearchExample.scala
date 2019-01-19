@@ -1,7 +1,8 @@
 package io.picnicml.doddlemodel.examples.modelselection
 
 import breeze.stats.distributions.Gamma
-import io.picnicml.doddlemodel.data.{loadBreastCancerDataset, splitDataset}
+import io.picnicml.doddlemodel.data.DatasetUtils.splitDataset
+import io.picnicml.doddlemodel.data.loadBreastCancerDataset
 import io.picnicml.doddlemodel.linear.LogisticRegression
 import io.picnicml.doddlemodel.metrics.accuracy
 import io.picnicml.doddlemodel.modelselection.{CrossValidation, HyperparameterSearch, KFoldSplitter}

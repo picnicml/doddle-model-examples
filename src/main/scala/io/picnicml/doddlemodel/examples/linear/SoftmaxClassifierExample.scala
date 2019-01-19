@@ -1,6 +1,7 @@
 package io.picnicml.doddlemodel.examples.linear
 
-import io.picnicml.doddlemodel.data.{loadIrisDataset, shuffleDataset, splitDataset}
+import io.picnicml.doddlemodel.data.DatasetUtils.{shuffleDataset, splitDataset}
+import io.picnicml.doddlemodel.data.loadIrisDataset
 import io.picnicml.doddlemodel.linear.SoftmaxClassifier
 import io.picnicml.doddlemodel.metrics.accuracy
 import io.picnicml.doddlemodel.syntax.ClassifierSyntax._

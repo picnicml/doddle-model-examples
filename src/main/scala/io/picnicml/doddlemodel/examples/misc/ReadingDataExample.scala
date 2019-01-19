@@ -1,15 +1,15 @@
 package io.picnicml.doddlemodel.examples.misc
 
-import io.picnicml.doddlemodel.data.loadCsvDataset
+import java.io.File
+
+import io.picnicml.doddlemodel.data.CsvLoader.loadCsvDataset
 
 object ReadingDataExample extends App {
-  val dataDir = "/path/to/local/data/dir"
+  val dataPath = "/path/to/local/data/dataset.csv"
+  val data = loadCsvDataset(new File(dataPath))
 
-  // by default a header line is assumed
-  val dataTr = loadCsvDataset(s"$dataDir/train.csv")
-  val dataTe = loadCsvDataset(s"$dataDir/test.csv")
-
-  // assume that 'label' is the first column
-  val (xTr, yTr) = (dataTr(::, 1 to -1), dataTr(::, 0))
-  val (xTe, yTe) = (dataTe(::, 1 to -1), dataTe(::, 0))
+  // assume that 'label' is the last column
+  val (x, y) = (data(::, 0 to -2), data(::, -1))
+  println(s"features shape: ${x.rows}, ${x.cols}")
+  println(s"target shape: ${y.length}")
 }

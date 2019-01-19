@@ -1,6 +1,7 @@
 package io.picnicml.doddlemodel.examples.misc
 
-import io.picnicml.doddlemodel.data.{loadIrisDataset, shuffleDataset}
+import io.picnicml.doddlemodel.data.DatasetUtils.shuffleDataset
+import io.picnicml.doddlemodel.data.loadIrisDataset
 
 import scala.util.Random
 
