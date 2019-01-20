@@ -33,7 +33,7 @@ This repository contains code examples for the [doddle-model](https://github.com
 * [Random Search](src/main/scala/io/picnicml/doddlemodel/examples/modelselection/RandomSearchExample.scala)
 
 #### 6. Miscellaneous
-* [Reading Data](src/main/scala/io/picnicml/doddlemodel/examples/misc/ReadingDataExample.scala)
+* [Reading Data](https://github.com/picnicml/doddle-model-examples/wiki/Reading-CSV-Data)
 * [Shuffling Data](src/main/scala/io/picnicml/doddlemodel/examples/misc/ShuffleDatasetExample.scala)
 * [Splitting Data](src/main/scala/io/picnicml/doddlemodel/examples/misc/SplitDatasetExample.scala)
 * [Feature Preprocessing Pipeline](src/main/scala/io/picnicml/doddlemodel/examples/pipeline/PipelineExample.scala)
