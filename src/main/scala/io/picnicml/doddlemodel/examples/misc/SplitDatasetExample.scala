@@ -5,7 +5,8 @@ import io.picnicml.doddlemodel.data.DatasetUtils.{splitDataset, splitDatasetWith
 import io.picnicml.doddlemodel.data.loadIrisDataset
 
 object SplitDatasetExample extends App {
-  val (x, y) = loadIrisDataset
+  val (x, y, featureIndex) = loadIrisDataset
+  println(s"features: $featureIndex")
 
   // if not specified, the default value of 0.5 is used for proportionTrain
   val split = splitDataset(x, y, proportionTrain = 0.9)

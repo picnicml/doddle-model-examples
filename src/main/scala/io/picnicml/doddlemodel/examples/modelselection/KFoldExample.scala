@@ -8,7 +8,8 @@ import io.picnicml.doddlemodel.modelselection.{CrossValidation, KFoldSplitter}
 import scala.util.Random
 
 object KFoldExample extends App {
-  val (x, y) = loadBreastCancerDataset
+  val (x, y, featureIndex) = loadBreastCancerDataset
+  println(s"features: $featureIndex")
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
   // lambda is L2 regularization strength

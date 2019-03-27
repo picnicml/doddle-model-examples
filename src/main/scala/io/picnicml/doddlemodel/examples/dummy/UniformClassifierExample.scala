@@ -10,7 +10,10 @@ import scala.util.Random
 
 object UniformClassifierExample extends App {
   implicit val rand: Random = new Random(42)
-  val (x, y) = (shuffleDataset _).tupled(loadIrisDataset)
+  val (features, target, featureIndex) = loadIrisDataset
+  println(s"features: $featureIndex")
+
+  val (x, y) = shuffleDataset(features, target)
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
   val split = splitDataset(x, y)

@@ -7,13 +7,21 @@ import io.picnicml.doddlemodel.preprocessing.StandardScaler
 import io.picnicml.doddlemodel.syntax.TransformerSyntax._
 
 object StandardScalerExample extends App {
-  val (x, _) = loadIrisDataset
-  println(s"Mean values before preprocessing: ${mean(x(::, *)).t}")
-  println(s"Standard deviations before preprocessing: ${stddev(x(::, *)).t}")
+  val (x, _, featureIndex) = loadIrisDataset
+  println(s"features: $featureIndex")
+  println(s"mean values before preprocessing: ${mean(x(::, *)).t}")
+  println(s"standard deviations before preprocessing: ${stddev(x(::, *)).t}")
 
   val scaler = StandardScaler()
   val trainedScaler = scaler.fit(x)
   val xTransformed = trainedScaler.transform(x)
-  println(s"Mean values after preprocessing: ${mean(xTransformed(::, *)).t}")
-  println(s"Standard deviations after preprocessing: ${stddev(xTransformed(::, *)).t}")
+  println(s"mean values after preprocessing: ${mean(xTransformed(::, *)).t}")
+  println(s"standard deviations after preprocessing: ${stddev(xTransformed(::, *)).t}")
+
+  // alternatively, transform only a subset of columns
+  val scalerSubset = StandardScaler(featureIndex("sepal_length", "petal_width"))
+  val trainedscalerSubset = scalerSubset.fit(x)
+  val xTransformedSubset = trainedscalerSubset.transform(x)
+  println(s"mean values after preprocessing: ${mean(xTransformedSubset(::, *)).t}")
+  println(s"standard deviations after preprocessing: ${stddev(xTransformedSubset(::, *)).t}")
 }

@@ -9,7 +9,9 @@ import io.picnicml.doddlemodel.modelselection.{CrossValidation, GroupKFoldSplitt
 import scala.util.Random
 
 object GroupKFoldExample extends App {
-  val (x, y) = loadBreastCancerDataset
+  val (x, y, featureIndex) = loadBreastCancerDataset
+  println(s"features: $featureIndex")
+
   // e.g. we have 10 patients
   val groups = Some(DenseVector((0 until x.rows).map(x => x % 10):_*))
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")

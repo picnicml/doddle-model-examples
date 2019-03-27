@@ -7,7 +7,7 @@ import io.picnicml.doddlemodel.metrics.accuracy
 import io.picnicml.doddlemodel.syntax.ClassifierSyntax._
 
 object EstimatorPersistenceExample extends App {
-  val (x, y) = loadBreastCancerDataset
+  val (x, y, _) = loadBreastCancerDataset
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
   val model = LogisticRegression()

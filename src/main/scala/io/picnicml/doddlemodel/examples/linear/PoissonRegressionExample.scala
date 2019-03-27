@@ -7,7 +7,8 @@ import io.picnicml.doddlemodel.metrics.rmse
 import io.picnicml.doddlemodel.syntax.RegressorSyntax._
 
 object PoissonRegressionExample extends App {
-  val (x, y) = loadHighSchoolTestDataset
+  val (x, y, featureIndex) = loadHighSchoolTestDataset
+  println(s"features: $featureIndex")
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
   val split = splitDataset(x, y)

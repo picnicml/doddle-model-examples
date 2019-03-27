@@ -15,7 +15,10 @@ import scala.util.Random
 object PipelineExample extends App {
   // load and shuffle the data
   implicit val rand: Random = new Random(42)
-  val (x, y) = (shuffleDataset _).tupled(loadIrisDataset)
+  val (features, target, featureIndex) = loadIrisDataset
+  println(s"features: $featureIndex")
+
+  val (x, y) = shuffleDataset(features, target)
 
   val split = splitDataset(x, y)
   println(s"training set size: ${split.xTr.rows}, test set size: ${split.xTe.rows}")

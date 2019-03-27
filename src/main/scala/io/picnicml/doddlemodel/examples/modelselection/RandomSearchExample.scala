@@ -11,7 +11,8 @@ import io.picnicml.doddlemodel.syntax.ClassifierSyntax._
 import scala.util.Random
 
 object RandomSearchExample extends App {
-  val (x, y) = loadBreastCancerDataset
+  val (x, y, featureIndex) = loadBreastCancerDataset
+  println(s"features: $featureIndex")
   println(s"number of examples: ${x.rows}, number of features: ${x.cols}")
 
   val split = splitDataset(x, y)

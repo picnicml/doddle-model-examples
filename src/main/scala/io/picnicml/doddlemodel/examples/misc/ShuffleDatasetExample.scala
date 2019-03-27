@@ -10,9 +10,6 @@ object ShuffleDatasetExample extends App {
   implicit val rand: Random = new Random(42)
 
   // load the data and shuffle afterwards
-  val (x, y) = loadIrisDataset
+  val (x, y, featureIndex) = loadIrisDataset
   val (xShuffled0, yShuffled0) = shuffleDataset(x, y)
-
-  // load and shuffle in a single line
-  val (xShuffled1, yShuffled1) = (shuffleDataset _).tupled(loadIrisDataset)
 }
