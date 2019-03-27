@@ -11,5 +11,5 @@ object ShuffleDatasetExample extends App {
 
   // load the data and shuffle afterwards
   val (x, y, featureIndex) = loadIrisDataset
-  val (xShuffled0, yShuffled0) = shuffleDataset(x, y)
+  val (xShuffled, yShuffled) = shuffleDataset(x, y)
 }
