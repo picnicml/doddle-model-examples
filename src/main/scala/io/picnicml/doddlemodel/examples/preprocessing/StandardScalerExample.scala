@@ -20,8 +20,8 @@ object StandardScalerExample extends App {
 
   // alternatively, transform only a subset of columns
   val scalerSubset = StandardScaler(featureIndex.subset("sepal_length", "petal_width"))
-  val trainedscalerSubset = scalerSubset.fit(x)
-  val xTransformedSubset = trainedscalerSubset.transform(x)
+  val trainedScalerSubset = scalerSubset.fit(x)
+  val xTransformedSubset = trainedScalerSubset.transform(x)
   println(s"mean values after preprocessing: ${mean(xTransformedSubset(::, *)).t}")
   println(s"standard deviations after preprocessing: ${stddev(xTransformedSubset(::, *)).t}")
 }
