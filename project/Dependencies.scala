@@ -4,7 +4,7 @@ object Dependencies {
 
   object V {
     val doodleVersion = "0.0.1-SNAPSHOT"
-    val slf4jVersion = "1.7.25"
+    val slf4jVersion = "1.7.26"
   }
 
   val compileDependencies: Seq[ModuleID] = Seq(

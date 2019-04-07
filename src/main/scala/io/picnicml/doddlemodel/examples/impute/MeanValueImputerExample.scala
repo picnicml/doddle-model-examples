@@ -15,5 +15,5 @@ object MeanValueImputerExample extends App {
   // only transform the first and the second column
   val imputer = MeanValueImputer(FeatureIndex.numerical(List(0, 1)))
   val trainedImputer = imputer.fit(xMissing)
-  println(s"imputed data: ${trainedImputer.transform(xMissing)}")
+  println(s"imputed data:\n${trainedImputer.transform(xMissing)}")
 }
