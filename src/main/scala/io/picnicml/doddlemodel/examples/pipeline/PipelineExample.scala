@@ -24,8 +24,8 @@ object PipelineExample extends App {
   println(s"training set size: ${split.xTr.rows}, test set size: ${split.xTe.rows}")
 
   val transformers: PipelineTransformers = List(
-    pipe(MeanValueImputer()),
-    pipe(StandardScaler())
+    pipe(MeanValueImputer(featureIndex)),
+    pipe(StandardScaler(featureIndex))
   )
   val pipeline = Pipeline(transformers)(pipe(SoftmaxClassifier()))
   val trainedPipeline = pipeline.fit(split.xTr, split.yTr)
