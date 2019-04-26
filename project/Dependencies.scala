@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
 
   object DependencyVersion {
-    val doodleVersion = "0.0.1-beta1"
+    val doodleVersion = "0.0.1-SNAPSHOT"
     val slf4jVersion = "1.7.26"
   }
 

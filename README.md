@@ -7,6 +7,7 @@ This repository contains code examples for the [doddle-model](https://github.com
 * [Standard Scaler](src/main/scala/io/picnicml/doddlemodel/examples/preprocessing/StandardScalerExample.scala)
 * [One-Hot Encoder](src/main/scala/io/picnicml/doddlemodel/examples/preprocessing/OneHotEncoderExample.scala)
 * [Mean Value Imputation](src/main/scala/io/picnicml/doddlemodel/examples/impute/MeanValueImputerExample.scala)
+* [Most Frequent Value Imputation](src/main/scala/io/picnicml/doddlemodel/examples/impute/MostFrequentValueImputerExample.scala)
 
 #### 2. Metrics
 * [Classification Metrics](https://github.com/picnicml/doddle-model/blob/master/src/main/scala/io/picnicml/doddlemodel/metrics/ClassificationMetrics.scala)
