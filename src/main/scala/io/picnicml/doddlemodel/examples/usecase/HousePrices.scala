@@ -41,7 +41,7 @@ object HousePrices extends App {
     println(s"Number of rows: ${x.rows}")
     println(s"Number of columns: ${x.cols}\n")
 
-    // we'll be predicting logarithm of the price
+    // we'll be predicting a logarithm of the price
     (x, log(y), featureIndex)
   }
 
