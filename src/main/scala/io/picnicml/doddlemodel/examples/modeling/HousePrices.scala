@@ -38,6 +38,7 @@ object HousePrices extends App {
     println(s"Number of rows: ${x.rows}")
     println(s"Number of columns: ${x.cols}\n")
 
+    // we'll be predicting logarithm of the price
     (x, log(y), featureIndex)
   }
 
@@ -52,11 +53,18 @@ object HousePrices extends App {
 
   def gridSearch(split: TrainTestSplit, featureIndex: FeatureIndex): Pipeline = {
     val numGridSearchIterations = 50
-    val grid = Range.BigDecimal(1e-5, 5.0, (5.0 - 1e-5) / numGridSearchIterations).map(_.toDouble).toIterator
 
     val cv: CrossValidation = CrossValidation(rmse, KFoldSplitter(numFolds = 10))
     val search = HyperparameterSearch(numGridSearchIterations, cv)
 
+    val (start, end, step) = (1e-5, 5.0, (5.0 - 1e-5) / numGridSearchIterations)
+    val grid = Range.BigDecimal(start, end, step).map(_.toDouble).toIterator
+
+    println("Searching the hyperparameter space")
+    search.bestOf(split.xTr, split.yTr) { generateModel(lambda = grid.next) }
+  }
+
+  def generateModel(lambda: Double): Pipeline = {
     val transformers: PipelineTransformers = List(
       // numerical features
       pipe(MeanValueImputer(featureIndex)),
@@ -65,11 +73,7 @@ object HousePrices extends App {
       pipe(MostFrequentValueImputer(featureIndex)),
       pipe(OneHotEncoder(featureIndex))
     )
-
-    println("Searching the hyperparameter space")
-    search.bestOf(split.xTr, split.yTr) {
-      // lambda is L2 regularization strength
-      Pipeline(transformers)(pipe(LinearRegression(lambda = grid.next)))
-    }
+    // lambda is L2 regularization strength
+    Pipeline(transformers)(pipe(LinearRegression(lambda)))
   }
 }
