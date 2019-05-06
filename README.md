@@ -40,3 +40,6 @@ This repository contains code examples for the [doddle-model](https://github.com
 * [Splitting Data](src/main/scala/io/picnicml/doddlemodel/examples/misc/SplitDatasetExample.scala)
 * [Feature Preprocessing Pipeline](src/main/scala/io/picnicml/doddlemodel/examples/pipeline/PipelineExample.scala)
 * [Estimator Persistence](src/main/scala/io/picnicml/doddlemodel/examples/misc/EstimatorPersistenceExample.scala)
+
+#### 7. Use Cases
+* [Kaggle House Prices](src/main/scala/io/picnicml/doddlemodel/examples/usecase/HousePrices.scala)

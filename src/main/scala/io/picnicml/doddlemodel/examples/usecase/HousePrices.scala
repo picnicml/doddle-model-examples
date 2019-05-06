@@ -1,4 +1,4 @@
-package io.picnicml.doddlemodel.examples.modeling
+package io.picnicml.doddlemodel.examples.usecase
 
 import java.io.File
 
@@ -21,7 +21,10 @@ import scala.util.Random
 object HousePrices extends App {
   implicit val seed: Random = new Random(0)
 
-  val (x, y, featureIndex) = loadData("/path/to/house-prices-doddle.csv")
+  // data downloaded from https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+  // note that an additional header line that encodes feature types as described on
+  // https://github.com/picnicml/doddle-model-examples/wiki/Reading-CSV-Data is required
+  val (x, y, featureIndex) = loadData("/path/to/house-prices.csv")
   val split = shuffleSplitData(x, y)
   val selectedModel = gridSearch(split, featureIndex)
 
