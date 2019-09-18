@@ -61,7 +61,7 @@ object HousePrices extends App {
     val search = HyperparameterSearch(numGridSearchIterations, cv)
 
     val (start, end, step) = (1e-5, 5.0, (5.0 - 1e-5) / numGridSearchIterations)
-    val grid = Range.BigDecimal(start, end, step).map(_.toDouble).toIterator
+    val grid = Range.BigDecimal(start, end, step).map(_.toDouble).iterator
 
     println("Searching the hyperparameter space")
     search.bestOf(split.xTr, split.yTr) { generateModel(lambda = grid.next) }

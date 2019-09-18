@@ -22,7 +22,7 @@ object GridSearchExample extends App {
   val search = HyperparameterSearch(numSearchIterations, cv)
 
   implicit val rand: Random = new Random(42)
-  val grid = (0 until numSearchIterations).toIterator.map(_.toDouble)
+  val grid = (0 until numSearchIterations).iterator.map(_.toDouble)
   val bestModel = search.bestOf(split.xTr, split.yTr) {
     LogisticRegression(lambda = grid.next)
   }
