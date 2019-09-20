@@ -13,8 +13,8 @@ object MeanValueImputerExample extends App {
   )
   val featureIndex = FeatureIndex.numerical(xMissing.cols)
 
-  // only impute the first and the last column
-  val imputer = MeanValueImputer(featureIndex.subset(IndexedSeq(0, 2)))
+  // only impute the last two columns
+  val imputer = MeanValueImputer(featureIndex.subset(1 to 2))
   val trainedImputer = imputer.fit(xMissing)
   println(s"imputed data:\n${trainedImputer.transform(xMissing)}")
 }
