@@ -20,7 +20,7 @@ object OneHotEncoderExample extends App {
   println(s"encoded data:\n${fittedOneHotEncoder.transform(x)}")
 
   // only encode the last feature
-  val oneHotEncoderSubset = OneHotEncoder(featureIndex.subset("f2"))
+  val oneHotEncoderSubset = OneHotEncoder(featureIndex.subset(IndexedSeq(2)))
   val fittedOneHotEncoderSubset = oneHotEncoderSubset.fit(x)
   println(s"encoded data:\n${fittedOneHotEncoderSubset.transform(x)}")
 }

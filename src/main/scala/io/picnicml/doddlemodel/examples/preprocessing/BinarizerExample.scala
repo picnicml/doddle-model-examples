@@ -20,7 +20,7 @@ object BinarizerExample extends App {
   println(s"binarized data:\n${fittedBinarizer.transform(x)}")
 
   // only binarize the last feature
-  val binarizerSubset = Binarizer(threshold = 1.0, featureIndex = featureIndex.subset("f2"))
+  val binarizerSubset = Binarizer(threshold = 1.0, featureIndex = featureIndex.subset(IndexedSeq(2)))
   val fittedBinarizerSubset = binarizerSubset.fit(x)
   println(s"binarized data:\n${fittedBinarizerSubset.transform(x)}")
 }
