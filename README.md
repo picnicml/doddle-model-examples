@@ -5,6 +5,9 @@ This repository contains code examples for the [doddle-model](https://github.com
 
 #### 1. Feature Preprocessing
 * [Standard Scaler](src/main/scala/io/picnicml/doddlemodel/examples/preprocessing/StandardScalerExample.scala)
+* [Range Scaler](src/main/scala/io/picnicml/doddlemodel/examples/preprocessing/RangeScalerExample.scala)
+* [Binarizer](src/main/scala/io/picnicml/doddlemodel/examples/preprocessing/BinarizerExample.scala)
+* [Normalizer](src/main/scala/io/picnicml/doddlemodel/examples/preprocessing/NormalizerExample.scala)
 * [One-Hot Encoder](src/main/scala/io/picnicml/doddlemodel/examples/preprocessing/OneHotEncoderExample.scala)
 * [Mean Value Imputation](src/main/scala/io/picnicml/doddlemodel/examples/impute/MeanValueImputerExample.scala)
 * [Most Frequent Value Imputation](src/main/scala/io/picnicml/doddlemodel/examples/impute/MostFrequentValueImputerExample.scala)
