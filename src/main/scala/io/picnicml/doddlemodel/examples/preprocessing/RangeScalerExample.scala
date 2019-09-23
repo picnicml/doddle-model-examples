@@ -20,7 +20,7 @@ object RangeScalerExample extends App {
   println(s"scaled data:\n${fittedScaler.transform(x)}")
 
   // only scale the last feature
-  val scalerSubset = RangeScaler(range = (0, 1), featureIndex = featureIndex.subset(IndexedSeq(2)))
+  val scalerSubset = RangeScaler(range = (0, 1), featureIndex = featureIndex.subset(2))
   val fittedScalerSubset = scalerSubset.fit(x)
   println(s"scaled data:\n${fittedScalerSubset.transform(x)}")
 }
